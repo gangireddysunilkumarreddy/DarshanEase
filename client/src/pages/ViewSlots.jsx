@@ -1,10 +1,13 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import API from "../services/api";
 import "../styles/ViewSlots.css";
 
 function ViewSlots() {
+  const navigate = useNavigate();
+
   const [slots, setSlots] = useState([]);
 
   useEffect(() => {
@@ -56,26 +59,30 @@ function ViewSlots() {
             <div className="slot-card" key={slot._id}>
               <h2>{slot.temple?.name}</h2>
 
-              <p><strong>📅 Date:</strong> {slot.date}</p>
+              <p>
+                <strong>📅 Date:</strong> {slot.date}
+              </p>
 
-              <p><strong>🕘 Time:</strong> {slot.time}</p>
+              <p>
+                <strong>🕘 Time:</strong> {slot.time}
+              </p>
 
-              <p><strong>💺 Available:</strong> {slot.availableSeats}</p>
+              <p>
+                <strong>💺 Available:</strong> {slot.availableSeats}
+              </p>
 
-              <p><strong>💰 Price:</strong> ₹{slot.price}</p>
+              <p>
+                <strong>💰 Price:</strong> ₹{slot.price}
+              </p>
 
               <div className="btn-group">
-                <button className="edit-btn">
-                  ✏️ Edit
-                </button>
-
-                <button
-                  className="delete-btn"
-                  onClick={() => deleteSlot(slot._id)}
-                >
-                  🗑 Delete
-                </button>
-              </div>
+  <button
+    className="delete-btn"
+    onClick={() => deleteSlot(slot._id)}
+  >
+    🗑 Delete
+  </button>
+</div>
             </div>
           ))}
         </div>
