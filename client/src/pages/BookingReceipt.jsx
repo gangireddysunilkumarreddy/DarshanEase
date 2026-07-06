@@ -34,8 +34,7 @@ function BookingReceipt() {
 
       <div className="receipt-container">
 
-        <div className="receipt-card">
-
+<div className="receipt-card" id="receipt">
           <h1>🛕 DarshanEase E-Ticket</h1>
 
           <hr />

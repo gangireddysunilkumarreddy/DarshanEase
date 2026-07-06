@@ -74,7 +74,7 @@ function Slots() {
         <h1 className="slot-title">🛕 Available Darshan Slots</h1>
 
         {loading ? (
-<Loader />        ) : slots.length === 0 ? (
+<h2 className="loading-text">Loading...</h2>       ) : slots.length === 0 ? (
           <h2 className="no-slots">No Slots Available</h2>
         ) : (
           <div className="slots-grid">
