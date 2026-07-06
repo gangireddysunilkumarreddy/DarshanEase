@@ -1,0 +1,115 @@
+.slots-container{
+    min-height:100vh;
+    padding:40px;
+    background:linear-gradient(135deg,#fff8f0,#fff,#f5f7ff);
+}
+
+.slot-title{
+    text-align:center;
+    font-size:42px;
+    color:#ff6b00;
+    margin-bottom:40px;
+    font-weight:700;
+}
+
+.loading-text,
+.no-slots{
+    text-align:center;
+    margin-top:80px;
+    color:#555;
+    font-size:28px;
+}
+
+.slots-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+    gap:30px;
+}
+
+.slot-card{
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.35s;
+    border:1px solid #eee;
+}
+
+.slot-card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 18px 40px rgba(0,0,0,.15);
+}
+
+.slot-header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.slot-header h2{
+    color:#ff6b00;
+    font-size:28px;
+}
+
+.slot-details{
+    margin-top:15px;
+}
+
+.slot-details p{
+    font-size:18px;
+    margin:14px 0;
+    color:#444;
+}
+
+.book-btn{
+    width:100%;
+    margin-top:25px;
+    padding:15px;
+    border:none;
+    border-radius:12px;
+    background:#ff6b00;
+    color:white;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.book-btn:hover{
+    background:#e65c00;
+    transform:scale(1.03);
+}
+
+@media(max-width:768px){
+
+    .slots-container{
+        padding:20px;
+    }
+
+    .slot-title{
+        font-size:30px;
+    }
+
+}
+
+
+.seat-green{
+    color:#16a34a;
+    font-weight:bold;
+}
+
+.seat-orange{
+    color:#ea580c;
+    font-weight:bold;
+}
+
+.seat-red{
+    color:#dc2626;
+    font-weight:bold;
+}
+
+
+.book-btn:disabled{
+    background:#9ca3af;
+    cursor:not-allowed;
+    transform:none;
+}

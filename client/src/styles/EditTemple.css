@@ -1,0 +1,63 @@
+.edit-temple-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 20px;
+  min-height: 80vh;
+  background: #f8f9fa;
+}
+
+.edit-temple-form {
+  width: 100%;
+  max-width: 550px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.edit-temple-form h1 {
+  text-align: center;
+  color: #ff6b00;
+  margin-bottom: 25px;
+}
+
+.edit-temple-form input,
+.edit-temple-form textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+}
+
+.edit-temple-form input:focus,
+.edit-temple-form textarea:focus {
+  border-color: #ff6b00;
+  box-shadow: 0 0 5px rgba(255, 107, 0, 0.3);
+}
+
+.edit-temple-form textarea {
+  resize: vertical;
+}
+
+.edit-temple-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff6b00;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 17px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.edit-temple-form button:hover {
+  background: #e65c00;
+}

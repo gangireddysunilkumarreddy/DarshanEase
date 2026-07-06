@@ -1,0 +1,33 @@
+.admin-bookings-container {
+  width: 95%;
+  margin: 40px auto;
+}
+
+.admin-bookings-container h1 {
+  text-align: center;
+  color: #ff6b00;
+  margin-bottom: 30px;
+}
+
+.booking-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.booking-table th,
+.booking-table td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: center;
+}
+
+.booking-table th {
+  background: #ff6b00;
+  color: white;
+}
+
+.booking-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
