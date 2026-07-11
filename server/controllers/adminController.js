@@ -37,6 +37,51 @@ const getAllBookings = async (req, res) => {
     });
   }
 };
+const getBookingAnalytics = async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+      .populate("slot")
+      .populate("temple");
+
+    const totalBookings = bookings.length;
+
+    const cancelledBookings = bookings.filter(
+      (b) => b.status === "Cancelled"
+    ).length;
+
+    const totalRevenue = bookings
+      .filter((b) => b.status === "Booked")
+      .reduce((sum, b) => sum + (b.slot?.price || 0), 0);
+
+    const templeCount = {};
+
+    bookings.forEach((b) => {
+      if (b.status === "Booked" && b.temple) {
+        const name = b.temple.name;
+        templeCount[name] = (templeCount[name] || 0) + 1;
+      }
+    });
+
+    let mostBookedTemple = "N/A";
+    let max = 0;
+
+    for (const temple in templeCount) {
+      if (templeCount[temple] > max) {
+        max = templeCount[temple];
+        mostBookedTemple = temple;
+      }
+    }
+
+    res.json({
+      totalBookings,
+      cancelledBookings,
+      totalRevenue,
+      mostBookedTemple,
+    });
+  } catch (error) {
+    res.status(500).json({ message: error.message });
+  }
+};
 
 // Dashboard Stats
 const getStats = async (req, res) => {
@@ -65,5 +110,6 @@ const getStats = async (req, res) => {
 module.exports = {
   getAllUsers,
   getAllBookings,
+  getBookingAnalytics,
   getStats,
 };

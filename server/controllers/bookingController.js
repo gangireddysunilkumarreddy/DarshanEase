@@ -117,9 +117,62 @@ const getAllBookings = async (req, res) => {
   }
 };
 
+// Booking Analytics
+const getBookingAnalytics = async (req, res) => {
+  try {
+    const bookings = await Booking.find()
+      .populate("slot")
+      .populate("temple");
+
+    const totalBookings = bookings.length;
+
+    const cancelledBookings = bookings.filter(
+      (b) => b.status === "Cancelled"
+    ).length;
+
+    const totalRevenue = bookings
+      .filter((b) => b.status === "Booked")
+      .reduce((sum, b) => sum + (b.slot?.price || 0), 0);
+
+    const templeCount = {};
+
+    bookings.forEach((b) => {
+      if (b.status === "Booked" && b.temple) {
+        const templeName = b.temple.name;
+
+        templeCount[templeName] =
+          (templeCount[templeName] || 0) + 1;
+      }
+    });
+
+    let mostBookedTemple = "N/A";
+    let max = 0;
+
+    for (const temple in templeCount) {
+      if (templeCount[temple] > max) {
+        max = templeCount[temple];
+        mostBookedTemple = temple;
+      }
+    }
+
+    res.status(200).json({
+      totalBookings,
+      cancelledBookings,
+      totalRevenue,
+      mostBookedTemple,
+    });
+
+  } catch (error) {
+    res.status(500).json({
+      message: error.message,
+    });
+  }
+};
+
 module.exports = {
   bookDarshan,
   getMyBookings,
   cancelBooking,
   getAllBookings,
+  getBookingAnalytics,
 };

@@ -11,7 +11,7 @@
 }
 
 .logo{
-    font-size:28px;
+    font-size:45px;
     font-weight:bold;
     color:#ff6b00;
 }
@@ -62,4 +62,27 @@
         justify-content:center;
     }
 
+}
+
+.back-btn{
+    padding:8px 16px;
+    border:none;
+    border-radius:8px;
+    background:#374151;
+    color:#fff;
+    font-size:15px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+    margin:0;
+}
+
+.back-btn:hover{
+    background: #1f2937;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:15px;
 }

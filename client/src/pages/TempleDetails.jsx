@@ -68,7 +68,8 @@ function TempleDetails() {
 
 <h3>About Temple</h3>
 
-<p>{temple.description}</p><a
+<p>{temple.description}</p>
+<a
   href={`https://www.google.com/maps/search/${encodeURIComponent(
     temple.location
   )}`}

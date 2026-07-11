@@ -145,7 +145,15 @@ box-shadow:0 18px 40px rgba(0,0,0,.18);
 }
 
 .temple-card{
-    overflow:hidden;
+    background:#fff;
+    border-radius:20px;
+    padding:25px;
+    box-shadow:0 12px 30px rgba(0,0,0,.08);
+    transition:.35s;
+    border:1px solid #ececec;
+
+    display:flex;
+    flex-direction:column;
 }
 
 .temple-card:hover .temple-image{
@@ -167,35 +175,14 @@ line-height:1.6;
 }
 
 .description{
+    color:#555;
+    margin:15px 0;
 
-color:#666;
-
-min-height:60px;
-
+    flex-grow:1;
 }
 
 .slot-btn{
-
-width:100%;
-
-margin-top:20px;
-
-padding:14px;
-
-border:none;
-
-background:#D97706;
-
-color:white;
-
-border-radius:12px;
-
-font-size:16px;
-
-font-weight:bold;
-
-transition:.3s;
-
+    margin-top:auto;
 }
 
 .slot-btn:hover{

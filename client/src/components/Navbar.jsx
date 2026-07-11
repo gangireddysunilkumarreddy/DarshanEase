@@ -1,9 +1,9 @@
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import "../styles/Navbar.css";
 
 function Navbar() {
-  const navigate = useNavigate();
-
+const navigate = useNavigate();
+const location = useLocation();
   const user = JSON.parse(localStorage.getItem("user"));
 
   const logout = () => {
@@ -14,7 +14,23 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="logo">🛕 DarshanEase</div>
+     <div className="logo-section">
+
+  {location.pathname !== "/home" &&
+   location.pathname !== "/admin" && (
+    <button
+      className="back-btn"
+      onClick={() => navigate(-1)}
+    >
+      ← Back
+    </button>
+  )}
+
+  <div className="logo">
+    🛕 DarshanEase
+  </div>
+
+</div>
 
       <div className="nav-links">
         {user?.role === "admin" ? (

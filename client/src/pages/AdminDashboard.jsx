@@ -14,9 +14,17 @@ function AdminDashboard() {
     slots: 0,
   });
 
+  const [analytics, setAnalytics] = useState({
+    totalBookings: 0,
+    cancelledBookings: 0,
+    totalRevenue: 0,
+    mostBookedTemple: "N/A",
+  });
+
   useEffect(() => {
-    fetchStats();
-  }, []);
+  fetchStats();
+  fetchAnalytics();
+}, []);
 
   const fetchStats = async () => {
     try {
@@ -31,6 +39,19 @@ function AdminDashboard() {
       console.log(error);
     }
   };
+  const fetchAnalytics = async () => {
+  try {
+    const res = await API.get("/bookings/analytics", {
+      headers: {
+        Authorization: localStorage.getItem("token"),
+      },
+    });
+
+    setAnalytics(res.data);
+  } catch (error) {
+    console.log(error);
+  }
+};
 
   return (
     <>
@@ -61,6 +82,40 @@ function AdminDashboard() {
             <h1>{stats.users}</h1>
           </div>
         </div>
+
+        <h2
+  style={{
+    marginTop: "40px",
+    marginBottom: "20px",
+    color: "#ff6b00",
+  }}
+>
+  📊 Analytics
+</h2>
+
+<div className="dashboard-grid">
+
+  <div className="dashboard-card">
+    <h2>🏆 Most Booked Temple</h2>
+    <h3>{analytics.mostBookedTemple}</h3>
+  </div>
+
+  <div className="dashboard-card">
+    <h2>💰 Total Revenue</h2>
+    <h3>₹{analytics.totalRevenue}</h3>
+  </div>
+
+  <div className="dashboard-card">
+    <h2>📖 Total Bookings</h2>
+    <h3>{analytics.totalBookings}</h3>
+  </div>
+
+  <div className="dashboard-card">
+    <h2>❌ Cancelled</h2>
+    <h3>{analytics.cancelledBookings}</h3>
+  </div>
+
+</div>
 
         {/* Management */}
         <div className="dashboard-grid">
