@@ -10,8 +10,7 @@ function Login() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-
-  const loginUser = async () => {
+const loginUser = async (type) => {
     setLoading(true);
 
     try {
@@ -22,6 +21,16 @@ function Login() {
 
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("user", JSON.stringify(res.data.user));
+
+      if (type === "admin" && res.data.user.role !== "admin") {
+  alert("This is Admin Login");
+  return;
+}
+
+if (type === "user" && res.data.user.role === "admin") {
+  alert("Please use Admin Login");
+  return;
+}
 
       setLoading(false);
 
@@ -67,9 +76,21 @@ function Login() {
           {showPassword ? "🙈 Hide Password" : "👁 Show Password"}
         </p>
 
-        <button onClick={loginUser} disabled={loading}>
-          {loading ? "Logging In..." : "Login"}
-        </button>
+        <button
+  onClick={() => loginUser("user")}
+  disabled={loading}
+>
+  {loading ? "Logging In..." : "👤 User Login"}
+</button>
+
+<button
+  className="admin-btn"
+  onClick={() => loginUser("admin")}
+  disabled={loading}
+>
+  {loading ? "Logging In..." : "🛡️ Admin Login"}
+</button>
+
 
         <p className="register-link">
           Don't have an account?{" "}

@@ -182,3 +182,12 @@ body {
     color:#ff6b00;
     margin-bottom:15px;
 }
+
+.admin-btn{
+    margin-top:10px;
+    background:#374151;
+}
+
+.admin-btn:hover{
+    background:#1f2937;
+}
