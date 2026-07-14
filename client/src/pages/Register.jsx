@@ -28,7 +28,7 @@ function Register() {
     setLoading(true);
 
     try {
-      await axios.post("http://localhost:8000/api/users/register", formData);
+      await axios.post("https://darshanease-backend-rfmz.onrender.com/api/users/register", formData);
 
       setLoading(false);
 

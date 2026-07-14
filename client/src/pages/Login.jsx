@@ -14,7 +14,7 @@ const loginUser = async (type) => {
     setLoading(true);
 
     try {
-      const res = await axios.post("http://localhost:8000/api/users/login", {
+      const res = await axios.post("https://darshanease-backend-rfmz.onrender.com/api/users/login", {
         email,
         password,
       });
