@@ -14,7 +14,8 @@ https://darshan-ease-fth0283sz-gangireddysunilkumarreddy.vercel.app
 
 https://github.com/gangireddysunilkumarreddy/DarshanEase
 
----
+**DEMO VIDEO LINK**
+**https://drive.google.com/file/d/1Wwk_bzOsoSmJCir1vXJTxHRsVnYr1MHs/view?usp=drive_link**
 
 ## ✨ Features
 
