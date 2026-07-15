@@ -32,14 +32,6 @@ DarshanEase is a MERN Stack based Temple Darshan Booking System that allows user
 - Axios
 - CSS
 
-## 📷 Screenshots
-
-- Login Page
-- Register Page
-- Home Page
-- Temple List
-- Booking Page
-- Admin Dashboard
 
 ## 🔗 GitHub Repository
 
