@@ -4,7 +4,13 @@
 
 DarshanEase is a Temple Darshan Booking System developed using the MERN Stack. It allows users to browse temples, book darshan slots, manage bookings, and enables administrators to manage temples, slots, and bookings through a dedicated dashboard.
 
----
+## 🌐 Live Demo
+
+https://darshan-ease-fth0283sz-gangireddysunilkumarreddy.vercel.app
+
+## 💻 GitHub Repository
+
+https://github.com/gangireddysunilkumarreddy/DarshanEase
 
 ## ✨ Features
 
@@ -52,7 +58,7 @@ DarshanEase is a Temple Darshan Booking System developed using the MERN Stack. I
 
 ### Database
 
-* MongoDB
+* MongoDB Atlas
 * Mongoose
 
 ### Authentication
@@ -101,7 +107,7 @@ routes/
 
 ### Clone Repository
 
-git clone <repository-link>
+git clone https://github.com/gangireddysunilkumarreddy/DarshanEase.git
 
 ### Install Backend
 
@@ -140,12 +146,9 @@ npm run dev
 * Manage Temples
 * Manage Slots
 
-(Add screenshots before final submission.)
-
----
 
 ## 👨‍💻 Developed By
 
-**Sunil**
+**GANGIREDDY SUNIL KUMAR REDDY**
 
 MERN Stack Internship Project
