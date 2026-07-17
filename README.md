@@ -8,7 +8,7 @@ DarshanEase is a Temple Darshan Booking System developed using the MERN Stack. I
 
 ## 🌐 Live Demo
 
-https://darshan-ease-fth0283sz-gangireddysunilkumarreddy.vercel.app
+https://darshan-ease-5m7lqgejo-gangireddysunilkumarreddy.vercel.app
 
 ## 💻 GitHub Repository
 
