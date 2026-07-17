@@ -1,0 +1,70 @@
+.view-temples-container {
+  width: 90%;
+  margin: 40px auto;
+}
+
+.view-temples-container h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #ff6b00;
+}
+
+.temples-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 25px;
+}
+
+.temple-card {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: 0.3s;
+}
+
+.temple-card:hover {
+  transform: translateY(-5px);
+}
+
+.temple-card h2 {
+  color: #ff6b00;
+  margin-bottom: 15px;
+}
+
+.temple-card p {
+  margin: 10px 0;
+  line-height: 1.6;
+}
+
+.btn-group {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.edit-btn,
+.delete-btn {
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: white;
+  font-size: 15px;
+}
+
+.edit-btn {
+  background: #2196f3;
+}
+
+.delete-btn {
+  background: #e53935;
+}
+
+.edit-btn:hover {
+  background: #1976d2;
+}
+
+.delete-btn:hover {
+  background: #c62828;
+}
