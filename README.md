@@ -128,21 +128,6 @@ npm run dev
 - Role-Based Access (Admin/User)
 - Protected Admin Routes
 
----
-
-## 📸 Screenshots
-
-- Login Page
-- Register Page
-- Home Page
-- Temple Details
-- Slot Booking
-- My Bookings
-- Admin Dashboard
-- Manage Temples
-- Manage Slots
-
----
 
 ## 👨‍💻 Developed By
 
